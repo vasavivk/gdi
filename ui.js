@@ -127,7 +127,7 @@ function list_files(path,files){
         if(item['size']==undefined){
             item['size'] = "";
         }
-        item['modifiedTime'] = utc2beijing(item['modifiedTime']);
+        
         item['size'] = formatFileSize(item['size']);
         if(item['mimeType'] == 'application/vnd.google-apps.folder'){
         	var p = path+item.name+'/';
@@ -253,8 +253,7 @@ function list_files(path,files){
 				<tr>
 					<td class="file-name"><a class="icon icon-bat" href="${p}">${item.name}</a></td>
 					<td class="file-size">${item['size']}</td>
-					<td class="file-date-modified">${item['modifiedTime']}</td>
-					<td class="file-date-modified">${item['mimeType']}</td>
+					
 				</tr>
             `;
         } else if(item['mimeType'] == 'application/x-msdownload'){
@@ -300,8 +299,7 @@ function list_files(path,files){
 				<tr>
 					<td class="file-name"><a class="icon icon-file" href="${p}">${item.name}</a></td>
 					<td class="file-size">${item['size']}</td>
-                    <td class="file-date-modified">${item['modifiedTime']}</td>
-                    <td class="file-date-modified">${item['mimeType']}</td>
+                  
 				</tr>
             `;
         }
